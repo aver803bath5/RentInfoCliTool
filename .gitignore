@@ -3,3 +3,8 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+/.idea
+
+identifier.sqlite
+RentInfoTool.sln.DotSettings.user
