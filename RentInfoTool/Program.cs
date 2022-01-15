@@ -84,15 +84,18 @@ const string landlordName = "林小姐";
 // 房租
 const int rent = 12000;
 
-// 總電費
-var totalEletronicFee = (lastElectricUsage - currentElectricUsage) * electricUnitFee;
+// 總用電量
+var electricUsage = currentElectricUsage - lastElectricUsage;
 
-var total = rent + totalEletronicFee;
+// 總電費
+var totalElectronicFee = (currentElectricUsage - lastElectricUsage) * electricUnitFee;
+
+var total = rent + totalElectronicFee;
 
 var output = $@"
 {landlordName}您好，這是這次的房租加電費總共是 {total} 元，請查收，謝謝您！
 
-電費算法為：({lastElectricUsage} - {currentElectricUsage}) * {electricUnitFee} = {lastElectricUsage - currentElectricUsage} * {electricUnitFee} = {totalEletronicFee}
+電費算法為：({currentElectricUsage} - {lastElectricUsage}) * {electricUnitFee} = {electricUsage} * {electricUnitFee} = {totalElectronicFee}
 ";
 
 Console.WriteLine(output);
